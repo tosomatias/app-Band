@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../navbar/index";
 import Form from "./Form";
 import Music from "../music/Music";
 import iconGlass from "../img/glass.svg";
@@ -46,7 +45,6 @@ const Home = ({
   };
   return (
     <>
-      <NavBar setOpenSearch={setOpenSearch} />
       {openSearch ? (
         <ConteinerFormHome>
           <ImgClose src={X} alt="close Icon" onClick={closeSearchGlass} />

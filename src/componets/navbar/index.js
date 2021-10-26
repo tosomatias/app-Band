@@ -1,9 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { auth, signOut } from "../../firebaseConfig";
 import { Container, Title, Button } from "./style";
 
 const NavBar = () => {
+  const location = useLocation();
+  const Url = location.pathname;
   const history = useHistory();
 
   const handleSignOut = () => {
@@ -20,11 +22,15 @@ const NavBar = () => {
     history.push("/spinner");
   };
   return (
-    <Container>
-      <Title onClick={closeSearchGlass}>My Band</Title>
+    <>
+      {Url === "/" ? null : (
+        <Container>
+          <Title onClick={closeSearchGlass}>My Band</Title>
 
-      <Button onClick={handleSignOut}>Cerrar sesión</Button>
-    </Container>
+          <Button onClick={handleSignOut}>Cerrar sesión</Button>
+        </Container>
+      )}
+    </>
   );
 };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../navbar/index";
 import { useHistory } from "react-router-dom";
 
 import { Container, ContainerLogo, Containerh1, ButtonReturn } from "./style";
@@ -11,7 +10,6 @@ const Spinner = () => {
   };
   return (
     <>
-      <NavBar />
       <ContainerLogo>
         <Containerh1>My Band</Containerh1>
       </ContainerLogo>

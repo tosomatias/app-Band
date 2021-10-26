@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../navbar/index";
 import { useHistory } from "react-router-dom";
 import {
   ContainerBand,
@@ -32,7 +31,6 @@ const Albums = ({ search, idBand, nameBand }) => {
   };
   return (
     <>
-      <NavBar />
       <ContainerTitle>
         {nameBand ? (
           <ImgReturn src={Return} alt="return" onClick={ReturnHome} />

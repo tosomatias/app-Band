@@ -8,6 +8,7 @@ import {
 import Login from "./componets/login/index";
 import Home from "./componets/home/index";
 import Albums from "./componets/albums/index";
+import NavBar from "./componets/navbar";
 import Spinner from "./componets/spinner/Spinner";
 import { auth, onAuthStateChanged } from "./firebaseConfig";
 
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <Router>
+      {user ? <NavBar /> : <Redirect to="/" />}
       <Switch>
         <Route exact path="/" render={() => <Login setUser={setUser} />} />
 
