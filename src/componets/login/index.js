@@ -26,6 +26,7 @@ const Login = ({ setUser }) => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [error, setError] = useState(false);
   const [newUser, setNewUser] = useState(false);
   const [logIn, setLogIn] = useState(false);
@@ -52,14 +53,21 @@ const Login = ({ setUser }) => {
 
   const procesarDatos = (e) => {
     e.preventDefault();
-    if (!email.trim() || !password.trim()) {
-      setError(true);
-    } else if (password.length < 6) {
-      setError(true);
-    } else if (newUser) {
+    if (newUser) {
+      if (!email.trim() || !password.trim()) {
+        setError(true);
+      } else if (password.length < 6) {
+        setError(true);
+      }
       setError(false);
       handleSignUp();
     } else if (logIn) {
+      if (!email.trim() || !password.trim()) {
+        setError(true);
+      } else if (password.length < 6) {
+        setError(true);
+      }
+      setError(false);
       handleLogin();
     } else if (google) {
       Google();
