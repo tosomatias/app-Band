@@ -152,3 +152,17 @@ export const TextError = styled.p`
   font-size: 12px;
   font-weight: bold;
 `;
+
+export const Mesagge = styled.p`
+  color: #fff;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 400;
+  position: absolute;
+  top: 90%;
+  left: 25%;
+  @media (min-width: 992px) {
+    top: 45%;
+    left: 17%;
+  }
+`;

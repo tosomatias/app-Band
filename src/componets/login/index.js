@@ -19,6 +19,7 @@ import {
   ContainerLoginButton,
   Button,
   TextError,
+  Mesagge,
 } from "./style";
 import Logo from "../img/logo";
 import IconGoogle from "../img/google.png";
@@ -126,11 +127,7 @@ const Login = ({ setUser }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          {error ? (
-            <TextError>
-              La contraseña debe contener minimo 6 caracteres
-            </TextError>
-          ) : null}
+
           <InputForm
             placeholder="Password"
             type="password"
@@ -138,6 +135,7 @@ const Login = ({ setUser }) => {
             onChange={(e) => setPassword(e.target.value)}
             error={error}
           />
+          <Mesagge>La contraseña debe tener minimo 6 caracteres</Mesagge>
           {account ? (
             <ContainerLoginButton>
               <Button onClick={() => setNewUser(true)}>Registarme</Button>
