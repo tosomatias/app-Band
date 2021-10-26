@@ -146,3 +146,9 @@ export const Path = styled.path`
     }
   }
 `;
+export const TextError = styled.p`
+  color: red;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+`;

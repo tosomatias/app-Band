@@ -18,6 +18,7 @@ import {
   TextAccount,
   ContainerLoginButton,
   Button,
+  TextError,
 } from "./style";
 import Logo from "../img/logo";
 import IconGoogle from "../img/google.png";
@@ -56,8 +57,6 @@ const Login = ({ setUser }) => {
       Google();
     }
     if (!email.trim() || !password.trim()) {
-      setError(true);
-    } else if (password.length < 6) {
       setError(true);
     } else if (newUser) {
       setError(false);
@@ -121,18 +120,15 @@ const Login = ({ setUser }) => {
 
       <ContainerFomr>
         <form onSubmit={procesarDatos}>
+          {error ? <TextError>Email no encontrado</TextError> : null}
           <InputForm
-            placeholder={error ? "Email no encontrado" : "Ingrese un Email"}
+            placeholder="Ingrese un Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            error={error}
           />
+
           <InputForm
-            placeholder={
-              error
-                ? "La contraseña debe tener minimo 6 caracteres"
-                : "Password"
-            }
+            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
