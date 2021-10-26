@@ -52,6 +52,7 @@ export const InputForm = styled.input`
   border: none;
   ::placeholder {
     font-family: "Poppins", sans-serif;
+    font-size: 16px;
 
     color: ${(props) => {
       return props.error ? "#F9BA48" : "gray";
@@ -102,6 +103,7 @@ export const TextAccount = styled.p`
   font-size: 12px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
+  cursor: pointer;
   @media (min-width: 992px) {
     margin-top: 5%;
   }
