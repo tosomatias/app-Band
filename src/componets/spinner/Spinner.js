@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Container, ContainerLogo, Containerh1, ButtonReturn } from "./style";
 
 const Spinner = () => {
+  const [animation, setAnimation] = useState(false);
   const history = useHistory();
   const returnHome = () => {
-    history.push("/home");
+    setAnimation(true);
+    setTimeout(() => {
+      history.push("/home");
+    }, 700);
   };
   return (
     <>
@@ -14,7 +18,7 @@ const Spinner = () => {
         <Containerh1>My Band</Containerh1>
       </ContainerLogo>
       <Container onClick={returnHome}>
-        <ButtonReturn>Volver al Home</ButtonReturn>
+        <ButtonReturn animation={animation}>Volver al Home</ButtonReturn>
       </Container>
     </>
   );

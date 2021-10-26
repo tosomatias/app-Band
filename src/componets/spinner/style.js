@@ -36,11 +36,15 @@ export const ButtonReturn = styled.button`
   padding: 4%;
   align-items: center;
   text-align: center;
+  transform: ${({ animation }) => {
+    return animation ? " scale(0.1)" : null;
+  }};
+  transition: transform 0.6s ease-in-out;
 
   cursor: pointer;
   @media (min-width: 992px) {
-    width: 30%;
-    padding: 2%;
-    font-size: 30px;
+    width: 50%;
+    padding: 6%;
+    font-size: 40px;
   }
 `;
